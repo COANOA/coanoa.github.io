@@ -67,6 +67,17 @@
         <![endif]-->
 
 
+        <script>
+            // Define dataLayer and the gtag function.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+         
+            // Default ad_storage to 'denied'.
+            gtag('consent', 'default', {
+              'ad_storage': 'denied'
+            });
+          </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -74,6 +85,21 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NZPC4JM');</script>
     <!-- End Google Tag Manager -->
+
+    <!-- Update this section based on your business requirements -->
+ <script>
+    function consentWasGranted() {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted'
+      });
+    }
+
+    function consentWasClicked() {
+        consentWasGranted();
+        dataLayer.push({'event': 'consentChange'});
+    }
+  </script>
+ 
 
 </head>
 
@@ -548,6 +574,9 @@
     <meta property="og:image" content="assets/img/opengraph.png">
     <meta property="og:type" content="Website">
     <meta property="site_name" content="ELFBAR SUPERSTORE">
+
+    <!--GA Button -->
+    <button onclick="consentGranted">Zustimmen</button>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZPC4JM"
