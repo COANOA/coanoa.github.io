@@ -67,41 +67,13 @@
         <![endif]-->
 
 
-        <script>
-            // Define dataLayer and the gtag function.
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-         
-            // Default ad_storage to 'denied'.
-            gtag('consent', 'default', {
-              'ad_storage': 'denied'
-            });
-
-            if (document.cookie.indeOf('dsgvo=1') > -1) {
-         consentWasGranted
-     }
-    function consentWasGranted() {
-      gtag('consent', 'update', {
-        'ad_storage': 'granted'
-      });
-    }
-
-    function consentWasClicked() {
-        consentWasGranted();
-        dataLayer.push({'event': 'consentChange'});
-        document.cookie ='dsgvo=1';
-    }
-          </script>
-
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NZPC4JM');</script>
-    <!-- End Google Tag Manager -->
-
- 
+    <!-- End Google Tag Manager --> 
 
 </head>
 
@@ -577,8 +549,7 @@
     <meta property="og:type" content="Website">
     <meta property="site_name" content="ELFBAR SUPERSTORE">
 
-    <!--GA Button -->
-    <button onclick="consentGranted">Zustimmen</button>
+
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZPC4JM"
