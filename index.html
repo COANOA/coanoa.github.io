@@ -76,6 +76,21 @@
             gtag('consent', 'default', {
               'ad_storage': 'denied'
             });
+
+            if (document.cookie.indeOf('dsgvo=1') > -1) {
+         consentWasGranted
+     }
+    function consentWasGranted() {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted'
+      });
+    }
+
+    function consentWasClicked() {
+        consentWasGranted();
+        dataLayer.push({'event': 'consentChange'});
+        document.cookie ='dsgvo=1';
+    }
           </script>
 
     <!-- Google Tag Manager -->
@@ -86,19 +101,6 @@
     })(window,document,'script','dataLayer','GTM-NZPC4JM');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- Update this section based on your business requirements -->
- <script>
-    function consentWasGranted() {
-      gtag('consent', 'update', {
-        'ad_storage': 'granted'
-      });
-    }
-
-    function consentWasClicked() {
-        consentWasGranted();
-        dataLayer.push({'event': 'consentChange'});
-    }
-  </script>
  
 
 </head>
